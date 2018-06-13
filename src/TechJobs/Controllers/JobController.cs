@@ -23,16 +23,7 @@ namespace TechJobs.Controllers
         {
             //TODO #1 - get the Job with the given ID and pass it into the view
 
-            Job theJob = jobData.Find(id);
-            NewJobViewModel theRealJob = new NewJobViewModel();
-
-            theRealJob.Name = theJob.Name;
-            theRealJob.EmployerID = theJob.Employer.ID;
-            theRealJob.CoreCompetencyID = theJob.CoreCompetency.ID;
-            theRealJob.LocationID = theJob.Location.ID;
-            theRealJob.PositionTypeID = theJob.PositionType.ID;
-
-            return View(theJob);
+            return View(jobData.Find(id));
         }
 
         public IActionResult New()
@@ -63,10 +54,6 @@ namespace TechJobs.Controllers
                 jobData.Jobs.Add(newJob);
                 return Redirect(String.Format("/job?id={0}", newJob.ID));
             }
-
-            //JobData data = JobData.GetInstance();
-            //Job newJob = new Job();
-            //newJob.Employer = data.Employers.Find(newJobViewModel.EmployerID.ID);
 
             return View(newJobViewModel);
         }

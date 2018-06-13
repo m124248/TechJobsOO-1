@@ -42,9 +42,6 @@ namespace TechJobs.ViewModels
 
         public NewJobViewModel()
         {
-
-
-
             JobData jobData = JobData.GetInstance();
 
             foreach (Employer field in jobData.Employers.ToList())
@@ -85,14 +82,6 @@ namespace TechJobs.ViewModels
                     Text = field.Value
                 });
             }
-
-
-
-
         }
-
-       
-
-
     }
 }

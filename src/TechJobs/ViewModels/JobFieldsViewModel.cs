@@ -9,7 +9,7 @@ namespace TechJobs.ViewModels
         // TODO #7.2 - Extract members common to SearchJobsViewModel
         // to BaseViewModel
 
-        // The current column
+        //current column
         public JobFieldType Column { get; set; }
 
         // All fields in the given column
